@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen Essentials Catalog</title>
+    <link rel="stylesheet" href="kitchen.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Commune</div>
+        <div class="search">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
+        <div class="cart">
+            <img src="/images/shopping-cart.png" alt="Cart Symbol">
+            <span id="cart-count">0</span>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="box">
+            <img src="/images/delivery images/home/1_knife_set.jpg" alt="Knife Set">
+            <h3>Knife Set</h3>
+            <p>$15</p>
+            <button class="add-to-cart" data-price="15">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/home/2_cooking_pot.jpg" alt="Cooking Pot">
+            <h3>Cooking Pot</h3>
+            <p>$25</p>
+            <button class="add-to-cart" data-price="25">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/home/3_spoon_set.jpg" alt="Spoon Set">
+            <h3>Spoon Set</h3>
+            <p>$10</p>
+            <button class="add-to-cart" data-price="10">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/home/frying-pan.jpg" alt="Frying Pan">
+            <h3>Frying Pan</h3>
+            <p>$20</p>
+            <button class="add-to-cart" data-price="20">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/home/blender.jpg" alt="Blender">
+            <h3>Blender</h3>
+            <p>$30</p>
+            <button class="add-to-cart" data-price="30">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/home/chopping-board.jpg" alt="Chopping Board">
+            <h3>Chopping Board</h3>
+            <p>$8</p>
+            <button class="add-to-cart" data-price="8">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/home/vegetable-peeler.jpg" alt="Vegetable Peeler">
+            <h3>Vegetable Peeler</h3>
+            <p>$5</p>
+            <button class="add-to-cart" data-price="5">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/home/electric-kettle.jpg" alt="Electric Kettle">
+            <h3>Electric Kettle</h3>
+            <p>$18</p>
+            <button class="add-to-cart" data-price="18">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/home/water-bottles.jpg" alt="Water Bottle">
+            <h3>Water Bottle</h3>
+            <p>$7</p>
+            <button class="add-to-cart" data-price="7">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/home/thermos.jpg" alt="Thermos">
+            <h3>Thermos</h3>
+            <p>$22</p>
+            <button class="add-to-cart" data-price="22">Add to Cart</button>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div id="cart-popup" class="cart-popup">
+        <span id="cart-message">Your Total Cart Value:</span>
+        <span id="cart-total">$0</span>
+        <button id="place-order">Place an Order</button>
+        <p id="order-confirmation" style="display: none;">Order has been placed!</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            const cartPopup = document.getElementById('cart-popup');
+            const cartTotalElement = document.getElementById('cart-total');
+            const cartCountElement = document.getElementById('cart-count');
+            const placeOrderButton = document.getElementById('place-order');
+            const orderConfirmation = document.getElementById('order-confirmation');
+            let cartTotal = 0;
+            let cartCount = 0;
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const price = parseFloat(button.getAttribute('data-price'));
+                    cartTotal += price;
+                    cartCount += 1;
+                    updateCart();
+                });
+            });
+
+            placeOrderButton.addEventListener('click', function() {
+                orderConfirmation.style.display = 'block';
+            });
+
+            function updateCart() {
+                cartTotalElement.textContent = `$${cartTotal.toFixed(2)}`;
+                cartCountElement.textContent = cartCount;
+            }
+        });
+    </script>
+</body>
+</html>

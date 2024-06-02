@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Health & Body Care Catalog</title>
+    <link rel="stylesheet" href="personalcare.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Commune</div>
+        <div class="search">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
+        <div class="cart">
+            <img src="/images/shopping-cart.png" alt="Cart Symbol">
+            <span id="cart-count">0</span>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="box">
+            <img src="/images/delivery images/f2/shampoo.jpg" alt="Shampoo">
+            <h3>Shampoo</h3>
+            <p>$8</p>
+            <button class="add-to-cart" data-price="8">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/f2/conditioner.jpg" alt="Conditioner">
+            <h3>Conditioner</h3>
+            <p>$7</p>
+            <button class="add-to-cart" data-price="7">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/f2/soap.jpg" alt="Soap">
+            <h3>Soap</h3>
+            <p>$3</p>
+            <button class="add-to-cart" data-price="3">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/f2/toothpaste.jpg" alt="Toothpaste">
+            <h3>Toothpaste</h3>
+            <p>$4</p>
+            <button class="add-to-cart" data-price="4">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/f2/body-lotion.jpg" alt="Body Lotion">
+            <h3>Body Lotion</h3>
+            <p>$10</p>
+            <button class="add-to-cart" data-price="10">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/f2/deodrant.jpg" alt="Deodorant">
+            <h3>Deodorant</h3>
+            <p>$6</p>
+            <button class="add-to-cart" data-price="6">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/f2/face-wash.jpg" alt="Face Wash">
+            <h3>Face Wash</h3>
+            <p>$5</p>
+            <button class="add-to-cart" data-price="5">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/f2/sun-screen.jpg" alt="Sunscreen">
+            <h3>Sunscreen</h3>
+            <p>$12</p>
+            <button class="add-to-cart" data-price="12">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/f2/hand-wash.jpg" alt="Hand Wash">
+            <h3>Hand Wash</h3>
+            <p>$4</p>
+            <button class="add-to-cart" data-price="4">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/f2/hand-cream.jpg" alt="Hand Cream">
+            <h3>Hand Cream</h3>
+            <p>$7</p>
+            <button class="add-to-cart" data-price="7">Add to Cart</button>
+        </div>
+    </div>
+
+
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+
+    <div id="cart-popup" class="cart-popup">
+        <span id="cart-message">Your Total Cart Value:</span>
+        <span id="cart-total">$0</span>
+        <button id="place-order">Place an Order</button>
+        <p id="order-confirmation" style="display: none;">Order has been placed!</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            const cartPopup = document.getElementById('cart-popup');
+            const cartTotalElement = document.getElementById('cart-total');
+            const cartCountElement = document.getElementById('cart-count');
+            const placeOrderButton = document.getElementById('place-order');
+            const orderConfirmation = document.getElementById('order-confirmation');
+            let cartTotal = 0;
+            let cartCount = 0;
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const price = parseFloat(button.getAttribute('data-price'));
+                    cartTotal += price;
+                    cartCount += 1;
+                    updateCart();
+                });
+            });
+
+            placeOrderButton.addEventListener('click', function() {
+                orderConfirmation.style.display = 'block';
+            });
+
+            function updateCart() {
+                cartTotalElement.textContent = `$${cartTotal.toFixed(2)}`;
+                cartCountElement.textContent = cartCount;
+            }
+        });
+    </script>
+</body>
+</html>

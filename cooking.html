@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooking Essentials Catalog</title>
+    <link rel="stylesheet" href="cooking.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Commune</div>
+        <div class="search">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
+        <div class="cart">
+            <img src="/images/shopping-cart.png" alt="Cart Symbol">
+            <span id="cart-count">0</span>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="box">
+            <img src="/images/delivery images/cooking essentials/olive oil.jpg" alt="Olive Oil">
+            <h3>Olive Oil</h3>
+            <p>$15</p>
+            <button class="add-to-cart" data-price="15">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/cooking essentials/salt.jpg" alt="Salt">
+            <h3>Salt</h3>
+            <p>$2</p>
+            <button class="add-to-cart" data-price="2">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/cooking essentials/black pepper.jpg" alt="Pepper">
+            <h3>Pepper</h3>
+            <p>$3</p>
+            <button class="add-to-cart" data-price="3">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/cooking essentials/flour.jpg" alt="Flour">
+            <h3>Flour</h3>
+            <p>$5</p>
+            <button class="add-to-cart" data-price="5">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/cooking essentials/sugar.jpg" alt="Sugar">
+            <h3>Sugar</h3>
+            <p>$4</p>
+            <button class="add-to-cart" data-price="4">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/cooking essentials/pasta.jpg" alt="Pasta">
+            <h3>Pasta</h3>
+            <p>$8</p>
+            <button class="add-to-cart" data-price="8">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/cooking essentials/rice.jpg" alt="Rice">
+            <h3>Rice</h3>
+            <p>$6</p>
+            <button class="add-to-cart" data-price="6">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/cooking essentials/honey.jpg" alt="Honey">
+            <h3>Honey</h3>
+            <p>$7</p>
+            <button class="add-to-cart" data-price="7">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/cooking essentials/chilli.jpg" alt="Spices">
+            <h3>Spices</h3>
+            <p>$10</p>
+            <button class="add-to-cart" data-price="10">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/cooking essentials/tea.jpg" alt="Tea">
+            <h3>Tea</h3>
+            <p>$5</p>
+            <button class="add-to-cart" data-price="5">Add to Cart</button>
+        </div>
+    </div>
+
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+
+
+    <div id="cart-popup" class="cart-popup">
+        <span id="cart-message">Your Total Cart Value:</span>
+        <span id="cart-total">$0</span>
+        <button id="place-order">Place an Order</button>
+        <p id="order-confirmation" style="display: none;">Order has been placed!</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            const cartPopup = document.getElementById('cart-popup');
+            const cartTotalElement = document.getElementById('cart-total');
+            const cartCountElement = document.getElementById('cart-count');
+            const placeOrderButton = document.getElementById('place-order');
+            const orderConfirmation = document.getElementById('order-confirmation');
+            let cartTotal = 0;
+            let cartCount = 0;
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const price = parseFloat(button.getAttribute('data-price'));
+                    cartTotal += price;
+                    cartCount += 1;
+                    updateCart();
+                });
+            });
+
+            placeOrderButton.addEventListener('click', function() {
+                orderConfirmation.style.display = 'block';
+            });
+
+            function updateCart() {
+                cartTotalElement.textContent = `$${cartTotal.toFixed(2)}`;
+                cartCountElement.textContent = cartCount;
+            }
+        });
+    </script>
+</body>
+</html>

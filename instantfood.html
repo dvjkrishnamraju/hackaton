@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instant Food Catalog</title>
+    <link rel="stylesheet" href="instantfood.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Commune</div>
+        <div class="search">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
+        <div class="cart">
+            <img src="/images/shopping-cart.png" alt="Cart Symbol">
+            <span id="cart-count">0</span>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="box">
+            <img src="/images/delivery images/instant/ramen/ramen.jpeg" alt="Ramen">
+            <h3>Ramen</h3>
+            <p>$1.5</p>
+            <button class="add-to-cart" data-price="1.5">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/instant/ramen/noodles.jpeg" alt="Instant Noodles">
+            <h3>Instant Noodles</h3>
+            <p>$2</p>
+            <button class="add-to-cart" data-price="2">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/instant/ramen/micro meal.jpeg" alt="Microwave Meal">
+            <h3>Microwave Meal</h3>
+            <p>$3.5</p>
+            <button class="add-to-cart" data-price="3.5">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/instant/ramen/instant cofffee.jpeg" alt="Instant Coffee">
+            <h3>Instant Coffee</h3>
+            <p>$2.5</p>
+            <button class="add-to-cart" data-price="2.5">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/instant/ramen/soup cup.jpeg" alt="Soup Cup">
+            <h3>Soup Cup</h3>
+            <p>$2</p>
+            <button class="add-to-cart" data-price="2">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/instant/ramen/pizza.jpeg" alt="Frozen Pizza">
+            <h3>Frozen Pizza</h3>
+            <p>$5</p>
+            <button class="add-to-cart" data-price="5">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/instant/ramen/porridge.jpeg" alt="Instant Porridge">
+            <h3>Instant Porridge</h3>
+            <p>$1.5</p>
+            <button class="add-to-cart" data-price="1.5">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/instant/ramen/pasta.jpeg" alt="Instant Pasta">
+            <h3>Instant Pasta</h3>
+            <p>$3</p>
+            <button class="add-to-cart" data-price="3">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/instant/ramen/curry.jpeg" alt="Instant Curry">
+            <h3>Instant Curry</h3>
+            <p>$4</p>
+            <button class="add-to-cart" data-price="4">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/instant/ramen/instant rice.jpeg" alt="Instant Rice">
+            <h3>Instant Rice</h3>
+            <p>$2.5</p>
+            <button class="add-to-cart" data-price="2.5">Add to Cart</button>
+        </div>
+    </div>
+
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+
+    <div id="cart-popup" class="cart-popup">
+        <span id="cart-message">Your Total Cart Value:</span>
+        <span id="cart-total">$0</span>
+        <button id="place-order">Place an Order</button>
+        <p id="order-confirmation" style="display: none;">Order has been placed!</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            const cartPopup = document.getElementById('cart-popup');
+            const cartTotalElement = document.getElementById('cart-total');
+            const cartCountElement = document.getElementById('cart-count');
+            const placeOrderButton = document.getElementById('place-order');
+            const orderConfirmation = document.getElementById('order-confirmation');
+            let cartTotal = 0;
+            let cartCount = 0;
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const price = parseFloat(button.getAttribute('data-price'));
+                    cartTotal += price;
+                    cartCount += 1;
+                    updateCart();
+                });
+            });
+
+            placeOrderButton.addEventListener('click', function() {
+                orderConfirmation.style.display = 'block';
+            });
+
+            function updateCart() {
+                cartTotalElement.textContent = `$${cartTotal.toFixed(2)}`;
+                cartCountElement.textContent = cartCount;
+            }
+        });
+    </script>
+</body>
+</html>

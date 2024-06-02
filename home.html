@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Name</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="container">
+            <div class="logo"><a href="#">Commune</a></div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#Services">Services</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+
+                    <li><a href="#login">Login</a></li>
+                    <li><img src="/images/shopping-cart.png" alt="Cart" class="cart-icon"></li> <!-- Cart icon -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <div id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Commune</h1>
+            <p>Your One-Stop Solution for Delivery, Tools, Transportation, and Services</p>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="services-container">
+        <h1>Services We Offer</h1>
+        <div id="services" class="sections">
+            <div class="section">
+                <h2>Delivery</h2>
+                <p>Fast and Reliable Delivery</p>
+                <p>Same-day delivery</p>
+                <p>Real-time tracking</p>
+                <p>Secure and insured packages</p>
+                <button onclick="location.href='delivery.html'">Explore More</button>
+            </div>
+            <div class="section">
+                <h2>Tools</h2>
+                <p>Quality Tools for Every Need</p>
+                <p>Construction tools</p>
+                <p>Gardening tools</p>
+                <p>DIY project tools</p>
+                <button onclick="location.href='tool.html'">Explore More</button>
+            </div>
+            <div class="section">
+                <h2>Transportation</h2>
+                <p>Convenient Transportation Services</p>
+                <p>Car rentals</p>
+                <p>Ride-sharing</p>
+                <p>Fleet management</p>
+                <button onclick="location.href='transportation.html'">Explore More</button>
+            </div>
+            <div class="section">
+                <h2>Services</h2>
+                <p>Comprehensive Services</p>
+                <p>Home cleaning</p>
+                <p>Maintenance and repair</p>
+                <p>Personal assistance</p>
+                <button onclick="location.href='services.html'">Explore More</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Section -->
+    <div class="featured">
+        <h2>Top Picks for You</h2>
+        <div class="featured-items">
+            <div class="featured-item">
+                <h3>Exclusive Offers on Delivery Services</h3>
+                <p>Get your packages delivered fast and securely with our special deals.</p>
+            </div>
+            <div class="featured-item">
+                <h3>Latest Tools for DIY Enthusiasts</h3>
+                <p>Upgrade your toolkit with the latest high-quality tools at unbeatable prices.</p>
+            </div>
+            <div class="featured-item">
+                <h3>Special Rates on Transportation</h3>
+                <p>Enjoy discounted rates on car rentals and ride-sharing services.</p>
+            </div>
+        </div>
+        <button onclick="location.href='offers.html'">See All Offers</button>
+    </div>
+
+
+
+    <!-- About and Contact Section -->
+    <div id="about-contact" class="sections">
+        <div class="about-section">
+            <h2>About Us</h2>
+            <p>Welcome to SVSM, your trusted partner for all your delivery, tools, transportation, and service needs.
+                Our mission is to provide top-notch solutions to make your life easier and more efficient.</p>
+            <p>At SVSM, we pride ourselves on our commitment to customer satisfaction. Our team of experienced
+                professionals is dedicated to ensuring that you receive the best service possible. Whether you need fast
+                and reliable delivery, high-quality tools, convenient transportation options, or comprehensive services
+                for your home or business, we have you covered.</p>
+            <p>Our vision is to be the leading provider in our industry, recognized for our innovation, quality, and
+                customer-centric approach. We continuously strive to improve and expand our offerings to meet the
+                evolving needs of our customers.</p>
+            <p>Thank you for choosing SVSM. We look forward to serving you!</p>
+        </div>
+
+        <div class="contact-section">
+            <h2>Contact Us</h2>
+            <!-- <p>Get in touch with us for any inquiries.</p>
+        <p>Contact Number: <strong>(123) 456-7890</strong></p>
+        <p>Email: <strong>SVSM@gmail.com</strong></p> -->
+            <form action="submit_form.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <!-- Reviews Section -->
+    <!-- Reviews Section -->
+    <div id="reviews" class="sections">
+        <!-- <h2>Reviews</h2> -->
+        <div class="reviews-carousel">
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="/images/review image1.jpg" alt="John Doe" class="review-avatar">
+                    <h3>John Doe</h3>
+                </div>
+                <p>"Fantastic service! My delivery arrived on time and in perfect condition. Highly recommend Commune."
+                </p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="/images/review image2.jpg" alt="Jane Smith" class="review-avatar">
+                    <h3>Jane Smith</h3>
+                </div>
+                <p>"Great selection of tools for my DIY projects. The quality is top-notch and the prices are
+                    unbeatable."</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="/images/review image3.jpg" alt="Mike Johnson" class="review-avatar">
+                    <h3>Mike Johnson</h3>
+                </div>
+                <p>"I rented a car through Commune and the process was smooth and hassle-free. Will definitely use their
+                    services again."</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <ul>
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#shipping">Shipping & Returns</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><a href="#contact">Contact Form</a></li>
+                    <li>Email: support@commune.com</li>
+                    <li>Phone: +1 234 567 890</li>
+                    <li>Address: 123 Commune St, Shopsville</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul class="social-media">
+                    <li><a href="#facebook">Facebook</a></li>
+                    <li><a href="#twitter">Twitter</a></li>
+                    <li><a href="#instagram">Instagram</a></li>
+                    <li><a href="#linkedin">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="footer-section newsletter">
+                <h4>Subscribe to our Newsletter</h4>
+                <form>
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Commune. All Rights Reserved.</p>
+            <!-- <div class="payment-methods">
+                <img src="path/to/visa.png" alt="Visa">
+                <img src="path/to/mastercard.png" alt="MasterCard">
+                <img src="path/to/paypal.png" alt="PayPal">
+                <img src="path/to/amex.png" alt="American Express">
+            </div> -->
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar .search input {
+    width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.navbar .search button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff7f0e;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.navbar .search button:hover {
+    background-color: #ff7f0e;
+}
+
+.navbar .cart {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .cart img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.navbar .cart span {
+    font-size: 18px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.box {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.box img {
+    width: 100%; /* Make the image cover the entire box */
+    height: 180px; /* Maintain aspect ratio */
+    border-radius: 10px; /* Ensure rounded corners */
+    transition: transform 0.3s ease; /* Add transition for hover effect */
+}
+
+
+.box h3 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.box p {
+    margin: 10px 0;
+}
+
+button.add-to-cart {
+    background-color: #ff7f0e;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.add-to-cart:hover {
+    background-color: #ff7f0e;
+}
+
+.cart-popup {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#cart-message {
+    font-weight: bold;
+}
+
+#cart-total {
+    color: #ff7f0e;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+#place-order {
+    margin-top: 10px;
+    background-color: #ff7f0e;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#place-order:hover {
+    background-color: #ff7f0e;
+}
+
+#order-confirmation {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #ff7f0e;
+}

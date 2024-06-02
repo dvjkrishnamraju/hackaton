@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Rental Catalog</title>
+    <link rel="stylesheet" href="car.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Vehicle Rental</div>
+        <div class="search">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
+        <div class="cart">
+            <img src="/images/shopping-cart.png" alt="Cart Symbol">
+            <span id="cart-count">0</span>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="box">
+            <img src="/images/transport/rental/car/SUV H.jpg" alt="SUV">
+            <h3>SUV</h3>
+            <p>$50/day</p>
+            <button class="add-to-cart" data-price="50">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/transport/rental/car/caR2.jpg" alt="Compact">
+            <h3>Compact</h3>
+            <p>$30/day</p>
+            <button class="add-to-cart" data-price="30">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/transport/rental/car/SUV.jpg" alt="Mini SUV">
+            <h3>Mini SUV</h3>
+            <p>$40/day</p>
+            <button class="add-to-cart" data-price="40">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/transport/rental/car/car1.jpg" alt="Sedan">
+            <h3>Sedan</h3>
+            <p>$35/day</p>
+            <button class="add-to-cart" data-price="35">Add to Cart</button>
+        </div>
+    </div>
+
+    <div id="cart-popup" class="cart-popup">
+        <span id="cart-message">Your Total Cart Value:</span>
+        <span id="cart-total">$0</span>
+        <button id="place-order">Place an Order</button>
+        <p id="order-confirmation" style="display: none;">Car Booked!</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            const cartPopup = document.getElementById('cart-popup');
+            const cartTotalElement = document.getElementById('cart-total');
+            const cartCountElement = document.getElementById('cart-count');
+            const placeOrderButton = document.getElementById('place-order');
+            const orderConfirmation = document.getElementById('order-confirmation');
+            let cartTotal = 0;
+            let cartCount = 0;
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const price = parseFloat(button.getAttribute('data-price'));
+                    cartTotal += price;
+                    cartCount += 1;
+                    updateCart();
+                });
+            });
+
+            placeOrderButton.addEventListener('click', function() {
+                orderConfirmation.style.display = 'block';
+            });
+
+            function updateCart() {
+                cartTotalElement.textContent = `$${cartTotal.toFixed(2)}`;
+                cartCountElement.textContent = cartCount;
+            }
+        });
+    </script>
+</body>
+</html>

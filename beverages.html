@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cold Beverages Catalog</title>
+    <link rel="stylesheet" href="beverages.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Commune</div>
+        <div class="search">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
+        <div class="cart">
+            <img src="/images/shopping-cart.png" alt="Cart Symbol">
+            <span id="cart-count">0</span>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="box">
+            <img src="/images/delivery images/beverages/New folder/cola.jpg" alt="Cola">
+            <h3>Cola</h3>
+            <p>$1.5</p>
+            <button class="add-to-cart" data-price="1.5">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/beverages/New folder/lemonade.jpeg" alt="Lemonade">
+            <h3>Lemonade</h3>
+            <p>$2</p>
+            <button class="add-to-cart" data-price="2">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/beverages/New folder/ice tea.jpeg" alt="Iced Tea">
+            <h3>Iced Tea</h3>
+            <p>$2.5</p>
+            <button class="add-to-cart" data-price="2.5">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/beverages/New folder/orange.jpeg" alt="Orange Juice">
+            <h3>Orange Juice</h3>
+            <p>$3</p>
+            <button class="add-to-cart" data-price="3">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/beverages/New folder/energy.jpeg" alt="Energy Drink">
+            <h3>Energy Drink</h3>
+            <p>$3.5</p>
+            <button class="add-to-cart" data-price="3.5">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/beverages/New folder/fruit.jpeg" alt="Smoothie">
+            <h3>Fruit Smoothie</h3>
+            <p>$4</p>
+            <button class="add-to-cart" data-price="4">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/beverages/New folder/water.jpeg" alt="Mineral Water">
+            <h3>Mineral Water</h3>
+            <p>$1</p>
+            <button class="add-to-cart" data-price="1">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/beverages/New folder/cold brew.jpeg" alt="Cold Brew Coffee">
+            <h3>Cold Brew Coffee</h3>
+            <p>$3</p>
+            <button class="add-to-cart" data-price="3">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/beverages/New folder/milkshake.jpeg" alt="Milkshake">
+            <h3>Milkshake</h3>
+            <p>$3.5</p>
+            <button class="add-to-cart" data-price="3.5">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="/images/delivery images/beverages/New folder/iced coffee.jpeg" alt="Iced Coffee">
+            <h3>Iced Coffee</h3>
+            <p>$2.5</p>
+            <button class="add-to-cart" data-price="2.5">Add to Cart</button>
+        </div>
+    </div>
+
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+
+    <div id="cart-popup" class="cart-popup">
+        <span id="cart-message">Your Total Cart Value:</span>
+        <span id="cart-total">$0</span>
+        <button id="place-order">Place an Order</button>
+        <p id="order-confirmation" style="display: none;">Order has been placed!</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            const cartPopup = document.getElementById('cart-popup');
+            const cartTotalElement = document.getElementById('cart-total');
+            const cartCountElement = document.getElementById('cart-count');
+            const placeOrderButton = document.getElementById('place-order');
+            const orderConfirmation = document.getElementById('order-confirmation');
+            let cartTotal = 0;
+            let cartCount = 0;
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const price = parseFloat(button.getAttribute('data-price'));
+                    cartTotal += price;
+                    cartCount += 1;
+                    updateCart();
+                });
+            });
+
+            placeOrderButton.addEventListener('click', function() {
+                orderConfirmation.style.display = 'block';
+            });
+
+            function updateCart() {
+                cartTotalElement.textContent = `$${cartTotal.toFixed(2)}`;
+                cartCountElement.textContent = cartCount;
+            }
+        });
+    </script>
+</body>
+</html>
